@@ -59,3 +59,15 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
+
+
+
+```
+部署备注：
+
+node 版本推荐要20.15.0
+pgsql 14< 或者 <16
+
+
+```

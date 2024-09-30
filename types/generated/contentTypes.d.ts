@@ -518,7 +518,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'article';
     pluralName: 'articles';
-    displayName: 'Article';
+    displayName: '\u6587\u7AE0';
     description: 'Create your blog content';
   };
   options: {
@@ -557,7 +557,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'author';
     pluralName: 'authors';
-    displayName: 'Author';
+    displayName: '\u4F5C\u8005';
     description: 'Create authors for your content';
   };
   options: {
@@ -611,7 +611,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   info: {
     singularName: 'category';
     pluralName: 'categories';
-    displayName: 'Category';
+    displayName: '\u6587\u7AE0\u7C7B\u578B';
     description: 'Organize your content into categories';
   };
   options: {
@@ -688,6 +688,64 @@ export interface ApiMenuMenu extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::menu.menu'>;
+  };
+}
+
+export interface ApiProductProduct extends Struct.CollectionTypeSchema {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product.product'
+    >;
+  };
+}
+
+export interface ApiProductTypeProductType extends Struct.CollectionTypeSchema {
+  collectionName: 'product_types';
+  info: {
+    singularName: 'product-type';
+    pluralName: 'product-types';
+    displayName: 'productType';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::product-type.product-type'
+    >;
   };
 }
 
@@ -1073,6 +1131,8 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::menu.menu': ApiMenuMenu;
+      'api::product.product': ApiProductProduct;
+      'api::product-type.product-type': ApiProductTypeProductType;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;
