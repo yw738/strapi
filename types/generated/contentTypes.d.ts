@@ -678,7 +678,7 @@ export interface ApiMenuMenu extends Struct.CollectionTypeSchema {
   };
   attributes: {
     label: Schema.Attribute.String;
-    children: Schema.Attribute.DynamicZone<['shared.label']>;
+    children: Schema.Attribute.DynamicZone<['shared.label', 'shared.seo']>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

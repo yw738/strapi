@@ -18,7 +18,8 @@
     "children": {
       "type": "dynamiczone",
       "components": [
-        "shared.label"
+        "shared.label",
+        "shared.seo"
       ]
     }
   }
