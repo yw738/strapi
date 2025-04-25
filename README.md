@@ -69,5 +69,12 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 node 版本推荐要20.15.0
 pgsql 14< 或者 <16
 
+部署流程
+1、第一步先yarn 安装依赖
+2、打包项目 
+yarn build
+，生成界面
+3、运行项目 
+yarn develop 
 
 ```
