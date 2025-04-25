@@ -78,3 +78,12 @@ yarn build
 yarn develop 
 
 ```
+
+```
+常见bug：
+
+1、文档加载不出来 一直loading
+https://github.com/strapi/strapi/issues/23224
+
+2、
+```
