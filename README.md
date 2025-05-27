@@ -76,6 +76,8 @@ yarn build
 ，生成界面
 3、运行项目 
 yarn develop 
+数据库必须要有 strapi 名字的数据库名称，没有就自己新建一个。
+
 
 ```
 
